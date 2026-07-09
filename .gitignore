@@ -1,0 +1,29 @@
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Office temp
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Node (future web app)
+node_modules/
+.next/
+dist/
+
+# Python (scripts)
+__pycache__/
+*.pyc
+.venv/
+
+# Env
+.env
+.env.local

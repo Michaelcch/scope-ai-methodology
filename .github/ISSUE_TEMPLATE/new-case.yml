@@ -1,0 +1,106 @@
+name: "提交新案例"
+description: "分享一个你见过的 AI 应用案例，帮助 SCOPE 案例库增长"
+title: "[新案例] "
+labels: ["community-case"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > 🎯 感谢你为 SCOPE 案例库贡献！填写下面的信息，帮助我们收录这个案例。
+        >
+        > **只要知道企业名 + 做了什么就可以提交**，详细的参数映射和原理标注由我们来补充。
+
+  - type: input
+    id: company
+    attributes:
+      label: "🏢 企业/项目名称"
+      placeholder: "例如：平安集团、潍柴动力、SHEIN"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: industry
+    attributes:
+      label: "🏭 行业"
+      options:
+        - "金融/保险"
+        - "制造/工业"
+        - "医疗/健康"
+        - "电商/零售"
+        - "教育"
+        - "农业"
+        - "物流/配送"
+        - "法律"
+        - "游戏"
+        - "广告/创意"
+        - "能源/电力"
+        - "网络安全"
+        - "餐饮"
+        - "出行/交通"
+        - "建筑"
+        - "HR/招聘"
+        - "体育健身"
+        - "服装时尚"
+        - "音乐/音频"
+        - "半导体"
+        - "航天"
+        - "其他"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 案例描述"
+      description: "AI 在这个案例中做了什么？有什么量化效果？（知道多少写多少）"
+      placeholder: |
+        例如：
+        - 平安集团部署AI坐席覆盖客服、销售、催收、质检四大场景
+        - AI坐席服务量达18.4亿次，覆盖客服总量80%
+        - AI解决率从38%提升至92%，NPS从49提升至78
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: "🔗 信息来源（URL）"
+      placeholder: "新闻链接、官方公告、行业报告等"
+    validations:
+      required: false
+
+  - type: textarea
+    id: metrics
+    attributes:
+      label: "📊 量化指标（可选）"
+      description: "如果有具体的数字，请补充"
+      placeholder: |
+        - 效率提升：___%
+        - 成本降低：___%
+        - 其他效果：___
+
+  - type: checkboxes
+    id: parameter_guess
+    attributes:
+      label: "🎯 你觉得主要提升了什么？（可选，可多选）"
+      options:
+        - label: "运营效率（流程加快、人力节省、资产利用提升）"
+        - label: "客户满意度（体验改善、NPS提升）"
+        - label: "创新能力（做到了以前做不到的事）"
+        - label: "风险控制（合规、安全、质量保障）"
+        - label: "收入增长（GMV、利润率、新客户）"
+        - label: "决策速度（更快的信息处理和分析）"
+        - label: "不确定"
+
+  - type: textarea
+    id: risk
+    attributes:
+      label: "⚠️ 你觉得有什么风险或副作用？（可选）"
+      placeholder: "例如：员工可能技能退化、客户不信任AI决策、数据隐私问题..."
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        > 🎉 提交后，我们会为这个案例进行 SCOPE 标注（参数映射 + 原理分类 + 进化路线评估），
+        > 并在采纳后将你的 GitHub ID 列入贡献者名单。感谢！
