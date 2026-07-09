@@ -105,8 +105,8 @@ E — Effect       查效应库 → 匹配具体 AI 技术
 
 | 方式 | 耗时 | 入口 |
 |:---|:---|:---|
-| 📎 贴链接 | 30 秒 | [Discussions 分享帖](https://github.com/luoyihan/scope-ai-methodology/discussions) |
-| 📝 填表单 | 3 分钟 | [Issue 新案例模板](https://github.com/luoyihan/scope-ai-methodology/issues/new?template=new-case.yml) |
+| 📎 贴链接 | 30 秒 | [Discussions 分享帖](https://github.com/Michaelcch/scope-ai-methodology/discussions) |
+| 📝 填表单 | 3 分钟 | [Issue 新案例模板](https://github.com/Michaelcch/scope-ai-methodology/issues/new?template=new-case.yml) |
 | 🔧 提交 PR | 10 分钟 | [CONTRIBUTING.md](./CONTRIBUTING.md) |
 
 ---
@@ -143,4 +143,4 @@ SCOPE 是新生方法论，坦率说：
 
 ---
 
-> 📅 2026-07-09 · 👤 [Luoyihan](https://github.com/luoyihan) · 🤖 协作: Claude Code
+> 📅 2026-07-09 · 👤 [Luoyihan](https://github.com/Michaelcch) · 🤖 协作: Claude Code

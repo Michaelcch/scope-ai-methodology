@@ -6,14 +6,14 @@
 
 ### 🟢 零门槛：分享一个 AI 应用案例链接
 
-在 [Discussions → "分享你看到的AI案例"](https://github.com/luoyihan/scope-ai-methodology/discussions) 区发帖：
+在 [Discussions → "分享你看到的AI案例"](https://github.com/Michaelcch/scope-ai-methodology/discussions) 区发帖：
 - 贴一个新闻/文章链接
 - 一句话描述：什么企业、用了什么 AI、效果如何
 - 剩下的标注工作我们来完成
 
 ### 🟡 入门：提交结构化案例（推荐）
 
-通过 [Issue 表单](https://github.com/luoyihan/scope-ai-methodology/issues/new?template=new-case.yml) 提交，填写：
+通过 [Issue 表单](https://github.com/Michaelcch/scope-ai-methodology/issues/new?template=new-case.yml) 提交，填写：
 1. 企业/项目名称
 2. 行业
 3. 案例描述（做了什么、量化效果）
@@ -91,4 +91,4 @@
 
 ---
 
-有问题？在 [Discussions](https://github.com/luoyihan/scope-ai-methodology/discussions) 提出。
+有问题？在 [Discussions](https://github.com/Michaelcch/scope-ai-methodology/discussions) 提出。
