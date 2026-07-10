@@ -18,3 +18,23 @@ model Feedback {
 
   @@map("feedbacks")
 }
+
+model User {
+  id        String   @id @default(uuid())
+  phone     String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("users")
+}
+
+model VerificationCode {
+  id        String   @id @default(uuid())
+  phone     String
+  code      String
+  expiresAt DateTime @map("expires_at")
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([phone, createdAt])
+  @@map("verification_codes")
+}

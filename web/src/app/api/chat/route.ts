@@ -120,7 +120,7 @@ export async function POST(request: Request) {
   ];
 
   // 安全：API Key 只在服务端使用
-  const apiKey = process.env.DEEPSEEK_API_KEY;
+  const apiKey = process.env.DASHSCOPE_API_KEY;
   if (!apiKey) {
     return Response.json(
       { error: "服务未配置 AI 接口" },
@@ -130,7 +130,7 @@ export async function POST(request: Request) {
 
   try {
     const response = await fetch(
-      "https://api.deepseek.com/v1/chat/completions",
+      "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
       {
         method: "POST",
         headers: {
@@ -138,7 +138,7 @@ export async function POST(request: Request) {
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: "deepseek-chat",
+          model: "qwen-plus",
           messages,
           stream: true,
           temperature: 0.7,
@@ -149,7 +149,7 @@ export async function POST(request: Request) {
 
     if (!response.ok) {
       const errText = await response.text();
-      console.error("DeepSeek API error:", response.status, errText);
+      console.error("DashScope API error:", response.status, errText);
       return Response.json(
         { error: `AI 服务返回错误 (${response.status})` },
         { status: 502 }
@@ -210,7 +210,7 @@ export async function POST(request: Request) {
       },
     });
   } catch (error) {
-    console.error("DeepSeek request error:", error);
+    console.error("DashScope request error:", error);
     return Response.json(
       { error: "AI 服务暂时不可用，请稍后重试" },
       { status: 502 }

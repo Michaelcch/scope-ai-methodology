@@ -46,3 +46,13 @@ export { Prisma }
  * 
  */
 export type Feedback = Prisma.FeedbackModel
+/**
+ * Model User
+ * 
+ */
+export type User = Prisma.UserModel
+/**
+ * Model VerificationCode
+ * 
+ */
+export type VerificationCode = Prisma.VerificationCodeModel
