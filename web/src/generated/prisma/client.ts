@@ -52,7 +52,7 @@ export type Feedback = Prisma.FeedbackModel
  */
 export type User = Prisma.UserModel
 /**
- * Model VerificationCode
+ * Model Scene
  * 
  */
-export type VerificationCode = Prisma.VerificationCodeModel
+export type Scene = Prisma.SceneModel

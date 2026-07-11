@@ -53,7 +53,7 @@ export const AnyNull = runtime.AnyNull
 export const ModelName = {
   Feedback: 'Feedback',
   User: 'User',
-  VerificationCode: 'VerificationCode'
+  Scene: 'Scene'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -87,23 +87,22 @@ export type FeedbackScalarFieldEnum = (typeof FeedbackScalarFieldEnum)[keyof typ
 
 export const UserScalarFieldEnum = {
   id: 'id',
-  phone: 'phone',
+  username: 'username',
+  passwordHash: 'passwordHash',
   createdAt: 'createdAt'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-export const VerificationCodeScalarFieldEnum = {
+export const SceneScalarFieldEnum = {
   id: 'id',
-  phone: 'phone',
-  code: 'code',
-  expiresAt: 'expiresAt',
-  used: 'used',
+  prompt: 'prompt',
+  result: 'result',
   createdAt: 'createdAt'
 } as const
 
-export type VerificationCodeScalarFieldEnum = (typeof VerificationCodeScalarFieldEnum)[keyof typeof VerificationCodeScalarFieldEnum]
+export type SceneScalarFieldEnum = (typeof SceneScalarFieldEnum)[keyof typeof SceneScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -10,5 +10,5 @@
  */
 export type * from './models/Feedback'
 export type * from './models/User'
-export type * from './models/VerificationCode'
+export type * from './models/Scene'
 export type * from './commonInputTypes'

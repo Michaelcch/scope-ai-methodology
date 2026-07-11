@@ -7,6 +7,7 @@ import { ChatMessageList } from "@/components/chat/ChatMessageList";
 import { ChatInput } from "@/components/chat/ChatInput";
 import { WelcomePanel } from "@/components/chat/WelcomePanel";
 import { FeedbackButton } from "@/components/chat/FeedbackButton";
+import { SaveSceneButton } from "@/components/chat/SaveSceneButton";
 import { useCallback, useMemo } from "react";
 
 function generateToken(): string {
@@ -46,6 +47,7 @@ export default function ChatPage() {
 
       <ChatInput onSubmit={handleSend} onStop={stop} isLoading={isLoading} />
 
+      <SaveSceneButton messages={messages} status={status} />
       <FeedbackButton />
     </div>
   );

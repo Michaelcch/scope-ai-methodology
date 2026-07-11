@@ -20,21 +20,19 @@ model Feedback {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  phone     String   @unique
-  createdAt DateTime @default(now()) @map("created_at")
+  id           String   @id @default(uuid())
+  username     String   @unique
+  passwordHash String   @map("password_hash")
+  createdAt    DateTime @default(now()) @map("created_at")
 
   @@map("users")
 }
 
-model VerificationCode {
+model Scene {
   id        String   @id @default(uuid())
-  phone     String
-  code      String
-  expiresAt DateTime @map("expires_at")
-  used      Boolean  @default(false)
+  prompt    String
+  result    String
   createdAt DateTime @default(now()) @map("created_at")
 
-  @@index([phone, createdAt])
-  @@map("verification_codes")
+  @@map("scenes")
 }

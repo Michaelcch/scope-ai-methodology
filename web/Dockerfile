@@ -2,6 +2,9 @@
 FROM node:22-alpine AS builder
 WORKDIR /app
 
+# Prisma 需要这些系统依赖
+RUN apk add --no-cache openssl openssl-dev
+
 COPY package.json package-lock.json ./
 RUN npm ci
 
@@ -14,6 +17,9 @@ FROM node:22-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000
+
+# 运行时也需要 openssl（Prisma 引擎依赖）
+RUN apk add --no-cache openssl
 
 # Next.js standalone 输出 + 静态文件 + Prisma
 COPY --from=builder /app/.next/standalone ./

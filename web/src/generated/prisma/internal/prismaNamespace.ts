@@ -386,7 +386,7 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 export const ModelName = {
   Feedback: 'Feedback',
   User: 'User',
-  VerificationCode: 'VerificationCode'
+  Scene: 'Scene'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -402,7 +402,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "feedback" | "user" | "verificationCode"
+    modelProps: "feedback" | "user" | "scene"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -554,77 +554,77 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    VerificationCode: {
-      payload: Prisma.$VerificationCodePayload<ExtArgs>
-      fields: Prisma.VerificationCodeFieldRefs
+    Scene: {
+      payload: Prisma.$ScenePayload<ExtArgs>
+      fields: Prisma.SceneFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.VerificationCodeFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$VerificationCodePayload> | null
+          args: Prisma.SceneFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScenePayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.VerificationCodeFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$VerificationCodePayload>
+          args: Prisma.SceneFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScenePayload>
         }
         findFirst: {
-          args: Prisma.VerificationCodeFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$VerificationCodePayload> | null
+          args: Prisma.SceneFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScenePayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.VerificationCodeFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$VerificationCodePayload>
+          args: Prisma.SceneFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScenePayload>
         }
         findMany: {
-          args: Prisma.VerificationCodeFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$VerificationCodePayload>[]
+          args: Prisma.SceneFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScenePayload>[]
         }
         create: {
-          args: Prisma.VerificationCodeCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$VerificationCodePayload>
+          args: Prisma.SceneCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScenePayload>
         }
         createMany: {
-          args: Prisma.VerificationCodeCreateManyArgs<ExtArgs>
+          args: Prisma.SceneCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.VerificationCodeCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$VerificationCodePayload>[]
+          args: Prisma.SceneCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScenePayload>[]
         }
         delete: {
-          args: Prisma.VerificationCodeDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$VerificationCodePayload>
+          args: Prisma.SceneDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScenePayload>
         }
         update: {
-          args: Prisma.VerificationCodeUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$VerificationCodePayload>
+          args: Prisma.SceneUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScenePayload>
         }
         deleteMany: {
-          args: Prisma.VerificationCodeDeleteManyArgs<ExtArgs>
+          args: Prisma.SceneDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.VerificationCodeUpdateManyArgs<ExtArgs>
+          args: Prisma.SceneUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.VerificationCodeUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$VerificationCodePayload>[]
+          args: Prisma.SceneUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScenePayload>[]
         }
         upsert: {
-          args: Prisma.VerificationCodeUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$VerificationCodePayload>
+          args: Prisma.SceneUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScenePayload>
         }
         aggregate: {
-          args: Prisma.VerificationCodeAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateVerificationCode>
+          args: Prisma.SceneAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateScene>
         }
         groupBy: {
-          args: Prisma.VerificationCodeGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.VerificationCodeGroupByOutputType>[]
+          args: Prisma.SceneGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SceneGroupByOutputType>[]
         }
         count: {
-          args: Prisma.VerificationCodeCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.VerificationCodeCountAggregateOutputType> | number
+          args: Prisma.SceneCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SceneCountAggregateOutputType> | number
         }
       }
     }
@@ -682,23 +682,22 @@ export type FeedbackScalarFieldEnum = (typeof FeedbackScalarFieldEnum)[keyof typ
 
 export const UserScalarFieldEnum = {
   id: 'id',
-  phone: 'phone',
+  username: 'username',
+  passwordHash: 'passwordHash',
   createdAt: 'createdAt'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-export const VerificationCodeScalarFieldEnum = {
+export const SceneScalarFieldEnum = {
   id: 'id',
-  phone: 'phone',
-  code: 'code',
-  expiresAt: 'expiresAt',
-  used: 'used',
+  prompt: 'prompt',
+  result: 'result',
   createdAt: 'createdAt'
 } as const
 
-export type VerificationCodeScalarFieldEnum = (typeof VerificationCodeScalarFieldEnum)[keyof typeof VerificationCodeScalarFieldEnum]
+export type SceneScalarFieldEnum = (typeof SceneScalarFieldEnum)[keyof typeof SceneScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -891,7 +890,7 @@ export type PrismaClientOptions = ({
 export type GlobalOmitConfig = {
   feedback?: Prisma.FeedbackOmit
   user?: Prisma.UserOmit
-  verificationCode?: Prisma.VerificationCodeOmit
+  scene?: Prisma.SceneOmit
 }
 
 /* Types for Logging */

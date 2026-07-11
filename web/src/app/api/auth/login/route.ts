@@ -1,61 +1,48 @@
 import { signToken, COOKIE_NAME } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { compare } from "bcryptjs";
 import { NextRequest } from "next/server";
 
-// 手机号正则
-const PHONE_REGEX = /^1[3-9]\d{9}$/;
-
 export async function POST(request: NextRequest) {
-  let body: { phone?: string; code?: string };
+  let body: { username?: string; password?: string };
   try {
     body = await request.json();
   } catch {
     return Response.json({ error: "请求格式错误" }, { status: 400 });
   }
 
-  const { phone, code } = body;
+  const { username, password } = body;
 
-  // 1. 校验手机号
-  if (!phone || !PHONE_REGEX.test(phone)) {
-    return Response.json({ error: "手机号格式不正确" }, { status: 400 });
+  if (!username || !password) {
+    return Response.json(
+      { error: "用户名和密码不能为空" },
+      { status: 400 }
+    );
   }
 
-  // 2. 校验验证码
-  if (!code || code.length !== 6) {
-    return Response.json({ error: "验证码格式不正确" }, { status: 400 });
-  }
-
-  // 3. 查找有效验证码
-  const record = await db.verificationCode.findFirst({
-    where: {
-      phone,
-      used: false,
-      expiresAt: { gt: new Date() },
-    },
-    orderBy: { createdAt: "desc" },
+  // 查找用户
+  const user = await db.user.findUnique({
+    where: { username },
   });
 
-  if (!record || record.code !== code) {
+  if (!user) {
+    // 避免泄露用户是否存在，统一返回"用户名或密码错误"
     return Response.json(
-      { error: "验证码错误或已过期" },
+      { error: "用户名或密码错误" },
       { status: 401 }
     );
   }
 
-  // 4. 标记验证码已使用
-  await db.verificationCode.update({
-    where: { id: record.id },
-    data: { used: true },
-  });
+  // 验密
+  const valid = await compare(password, user.passwordHash);
+  if (!valid) {
+    return Response.json(
+      { error: "用户名或密码错误" },
+      { status: 401 }
+    );
+  }
 
-  // 5. 创建或查找用户
-  await db.user.upsert({
-    where: { phone },
-    create: { phone },
-    update: {},
-  });
-
-  // 6. 签发 JWT
+  // 签发 JWT
   const token = await signToken();
 
   return Response.json(

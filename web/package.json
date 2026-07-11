@@ -11,10 +11,10 @@
   "dependencies": {
     "@ai-sdk/openai": "^4.0.10",
     "@ai-sdk/react": "^4.0.20",
-    "@alicloud/dysmsapi20170525": "^4.0.0",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "ai": "^7.0.19",
+    "bcryptjs": "^3.0.3",
     "jose": "^6.2.3",
     "next": "16.2.10",
     "pg": "^8.22.0",
@@ -27,12 +27,14 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "tailwindcss": "^4",
+    "tsx": "^4.23.0",
     "typescript": "^5"
   }
 }
