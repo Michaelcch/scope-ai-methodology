@@ -2,11 +2,20 @@
 
 > **把寻找 AI 应用场景，从"拍脑袋"的艺术，变成"按图索骥"的科学。**
 
-[![Version](https://img.shields.io/badge/version-V4.0-blue)](./SCOPE方法论完整版.md)
+[![Version](https://img.shields.io/badge/version-V4.1.1-blue)](./SCOPE方法论完整版.md)
 [![Cases](https://img.shields.io/badge/案例-210个-green)](./cases/)
 [![Industries](https://img.shields.io/badge/行业-42+-orange)](./cases/)
 [![Matrix](https://img.shields.io/badge/矛盾矩阵填满率-100%25-brightgreen)](./SCOPE方法论完整版.md)
+[![Live](https://img.shields.io/badge/在线试用-Agent-red)](http://121.40.61.131:3000)
 [![License](https://img.shields.io/badge/许可-CC%20BY--SA%204.0-lightgrey)](./LICENSE)
+
+---
+
+## 🤖 在线试用
+
+**不需要读文档，直接跟 AI 对话。** SCOPE Agent 会引导你走完五步流程，自动查询矛盾矩阵，给出带案例支撑的方案建议。
+
+👉 **[121.40.61.131:3000](http://121.40.61.131:3000)** — 免注册，打开即用。
 
 ---
 
@@ -128,7 +137,7 @@ SCOPE 是新生方法论，坦率说：
 
 - [x] 210 案例 + 36 格矩阵全覆盖（V4.0）
 - [x] 7 条进化路线 + 效应库
-- [ ] SCOPE Agent（引导式 AI 对话，走完五步流程）
+- [x] SCOPE Agent（引导式 AI 对话，走完五步流程）✅ [在线试用](http://121.40.61.131:3000)
 - [ ] 前向验证（盲推方案 vs 实际情况对比）
 - [ ] 社区案例收集机制
 
