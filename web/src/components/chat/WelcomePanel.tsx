@@ -26,7 +26,7 @@ export function WelcomePanel({ onExampleClick }: WelcomePanelProps) {
           SCOPE · AI 业务场景顾问
         </h1>
         <p className="mb-8 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
-          基于 <strong>210 个真实案例</strong>和 <strong>36 个发明原理</strong>，
+          基于 <strong>~1000 个真实案例</strong>和 <strong>36 个发明原理</strong>，
           系统性地帮您找到 AI 赋能业务的最佳切入点。
           不用懂技术，告诉我您的业务痛点就行。
         </p>

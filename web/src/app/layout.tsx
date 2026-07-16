@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "SCOPE · AI 业务场景顾问",
   description:
-    "基于 210 个真实案例和 36 个发明原理，系统性地帮您找到 AI 赋能业务的最佳切入点。",
+    "基于 ~1000 个真实案例和 36 个发明原理，系统性地帮您找到 AI 赋能业务的最佳切入点。",
 };
 
 export default function RootLayout({
